@@ -8,8 +8,11 @@
 </head>
 <body>
 
+  <%= render 'layouts/navigation' %>
   <%= render 'layouts/messages' %>
-  <%= yield %>
-
+  <div class="container"> <!-- by ant 4 bootstrap -->
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>
