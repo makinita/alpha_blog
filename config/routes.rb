@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   
   resources :articles
   
+  get "signup", to: 'users#new'
+  #post 'users', to: 'users#create' asi funcionaria pero mejor creamos todas las rutas, excepto la ya creada
+  resources :users, except: [:new]
+  
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
