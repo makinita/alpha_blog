@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3' movido a development para subir a heroku
+gem 'bcrypt', '~> 3.1.7'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.6'
