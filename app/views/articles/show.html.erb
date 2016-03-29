@@ -18,10 +18,12 @@
   <%= simple_format(@article.description) %>
 
   <div class="article-actions">
+    <% if logged_in? && current_user == @article.user %>
     <%= link_to "Editar este articulo", edit_article_path(@article), class: "btn btn-xs btn-primary" %> 
     <%= link_to "Eliminar este artículo", article_path(@article), method: :delete, 
                         data: { confirm: "Está seguro?" }, 
                         class: "btn btn-xs btn-danger" %> 
+    <% end %>
     <%= link_to "Ver todos", articles_path, class: "btn btn-xs btn-success" %>
   </div>
 </div> 
