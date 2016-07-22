@@ -1,0 +1,4 @@
+== README
+
+This is README file for ror alpha_blog app
+
