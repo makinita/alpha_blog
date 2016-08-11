@@ -29,7 +29,8 @@ class CategoriesControllerTest < ActionController::TestCase
     assert_no_difference 'Category.count' do
       post :create, category: {name: "sports" }
     end
-    
+    #al no estar logueado como admin, se debe dar esta redireccion 
+    #tal como figura el before_action del controlador require_admin
     assert_redirected_to categories_path
     
   end
