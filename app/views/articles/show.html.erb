@@ -17,6 +17,11 @@
   <hr>
   <%= simple_format(@article.description) %>
 
+  <% if @article.categories.any? %>
+  <p>Categories: <%= render @article.categories %></p>
+  <% #esto automatically hace render como si hiciera un article.categories.each. Esto renderiza categories/_category.html.erb  %>
+  <% end %>
+
   <div class="article-actions">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to "Editar este articulo", edit_article_path(@article), class: "btn btn-xs btn-primary" %> 

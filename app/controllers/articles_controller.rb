@@ -57,7 +57,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   def article_params
-    params.require(:article).permit(:title, :description)
+    #params.require(:article).permit(:title, :description)
+    #tras añadir los checkboxes de asignar categoria, añadimos al whitelist lo siguiente
+    #indicando de esta manera que category_ids es un array (se puede comprobar al enviar form erroneamente,
+    #viendo abajo en el debuger de los params que los category_ids son un array con los seleccionados)
+    params.require(:article).permit(:title, :description, category_ids: [])
   end
   def require_same_user
     if current_user != @article.user and !current_user.admin?
